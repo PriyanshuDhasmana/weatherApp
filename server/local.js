@@ -1,3 +1,4 @@
+// server/local.js
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
@@ -17,9 +18,10 @@ app.get("/api/weather", async (req, res) => {
     const response = await axios.get(url);
     res.json(response.data);
   } catch (error) {
+    console.error(error.message);
     res.status(500).json({ error: "Failed to fetch weather data" });
   }
 });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));

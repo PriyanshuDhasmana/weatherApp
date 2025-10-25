@@ -9,3 +9,4 @@ client/build
 # Ignore environment variables
 .env
 server/.env
+.vercel
