@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: teknologia-api
+    env: node
+    buildCommand: npm install
+    startCommand: node server/server.js
+    envVars:
+      - key: NEWS_API_KEY
+        sync: false
+    plan: free
